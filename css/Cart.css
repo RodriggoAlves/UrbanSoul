@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root{
+    --green: #129b29fb;
+    --black: #000000;
+    --white: #ffffff;
+}
+
+/*botão de finalizar ccompra*/
+
+.checkout-btn {
+    background: linear-gradient(135deg, #000000 0%, #3e3d3f 100%);
+    color: white;
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    font-family: 'Poppins',sans-serif;
+}
+
+.checkout-btn:hover {
+    background: linear-gradient(135deg, #01a801 0%, #2c2b2c 100%);
+    opacity: 0.9;
+    transform: scale(0.98);
+    color: var(--white);
+}
+
+/* Fonte do botão de abrir o carrinho*/
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--white);
+    cursor: pointer;
+    position: relative;
+    padding: 8px 16px;
+    transition: background 0.3s;
+    color: black;
+    font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+}
+
+/*Botão de remover item do carrinnho*/
+.remove-item {
+    background-color: transparent;
+    cursor: pointer;
+    padding: 4px;
+    border: none;
+    transition: background 0.2s;
+    font-size: 20px;
+}
+
+.remove-item:hover {
+    background: transparent;
+    color: rgb(255, 17, 0);
+}
+
+/* parte responsavel por somar o valor do carrinho */
+.cart-total {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--green);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Parte responsavel pelos Itens no carrinho */
+.cart-item {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 490;
+    font-size: 1.1rem;
+    color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #000000; /* linha de separação dos produtos */
+}

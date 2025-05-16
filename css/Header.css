@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+/* Logo do projeto */
+.logo {
+    color: #000000;
+    font-size: 3.0rem;
+    font-weight: 750;
+    letter-spacing: -1px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Seção Hero */
+.hero {
+    margin-top: 80px;
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(77, 77, 77, 0.9)),
+    url('/img/Backgorund.png') center/contain;
+    padding: 10rem 5%;
+    text-align: center;
+    color: white;
+}
+
+@keyframes chromaWave {
+   
+    0% {
+        background-position: -100%;
+    }
+    
+    100% {
+        background-position: 200%;
+    }
+
+}
+
+.hero h1 {
+    display: block; /* Mantém como bloco */
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    position: relative;
+    /* Remova o inline-block duplicado */
+    background: linear-gradient(136deg, #2c2b2b, #ffffff, hsl(272, 93%, 51%));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: chromaWave 7s infinite linear;    
+}
+
+.Subtitle-hero {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    position: relative;
+    display: block; /* Alterado para bloco */
+    background: linear-gradient(136deg, #2c2b2b, #ffffff, hsl(272, 93%, 51%));
+    background-size: 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: chromaWave 7s infinite linear;
+}
