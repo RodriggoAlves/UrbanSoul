@@ -9,10 +9,25 @@
     font-family: 'Dancing Script', cursive;
 }
 
-/* Seção Hero */
+/*parte superior que contem o menu */
+
+header {
+    background-color: var(--white);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(19, 18, 18, 0.1);
+}
+
+/* Seção hero da pagina onde contem a imagem de fundo do site e o degrade de baixo pra cima*/
 .hero {
     margin-top: 80px;
-    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(77, 77, 77, 0.9)),
+    background: linear-gradient(rgba(127, 118, 118, 0.9), rgba(0, 0, 0, 0.9)),
     url('/img/Backgorund.png') center/contain;
     padding: 10rem 5%;
     text-align: center;
@@ -31,6 +46,7 @@
 
 }
 
+/* texto com a imagem de fundo da loja */
 .hero h1 {
     display: block; /* Mantém como bloco */
     font-family: 'Poppins', sans-serif;
@@ -44,9 +60,16 @@
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
-    animation: chromaWave 7s infinite linear;    
+    animation: chromaWave 7s infinite linear;   
+    transform: scale(1); /* Estado padrão */
+    transition: transform 0.8s, box-shadow 0.3s;
+}
+.hero h1:hover{
+    transition: transform 0.8s,box-shadow 0.3s;
+    transform: scale(1.1);
 }
 
+/* texto com o subtitulo ondem contem a imagem de fundo da loja */  
 .Subtitle-hero {
     font-family: 'Poppins', sans-serif;
     font-size: 1.4rem;

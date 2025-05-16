@@ -47,6 +47,27 @@
         <button class="checkout-btn" onclick="handleCheckout()">Finalizar Compra</button>
         
     </div>
+    
+    <div class="size-modal" id="size-modal">
+
+        <div class="size-modal-content">
+            <button class="close-modal" onclick="closeSizeModal()">✕</button>
+            <img id="modal-product-image" src="" alt="Produto" class="modal-image">
+            <h3 id="modal-product-name"></h3>
+            <p>Selecione um tamanho:</p>
+        
+            <div class="size-options">
+        
+            <button onclick="selectSize('P')">P</button>
+            <button onclick="selectSize('M')">M</button>
+            <button onclick="selectSize('G')">G</button>
+        
+            </div>
+    
+        </div>
+    
+    </div>
+
     <script src="/js/Script.js"></script>
 
 

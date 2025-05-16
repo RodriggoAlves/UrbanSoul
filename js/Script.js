@@ -10,38 +10,45 @@ const products = [
 ];
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
+let selectedProduct = null;
 
 function initProducts() {
     const container = document.getElementById('products-container');
     
     products.forEach(product => {
-    
         const productHTML = `
-        
-    <div class="product-card">
-            <img src="${product.image}" alt="${product.name}" class="product-image">
-            
-            <div class="product-info">
-            
-            <h3>${product.name}</h3>
-                <p class="product-price">R$ ${product.price.toFixed(2)}</p>
-                
-                <button class="add-to-cart" onclick="addToCart(${product.id})">
-                🛍️ Adicionar ao Carrinho
-                </button>
-            
+            <div class="product-card">
+                <img src="${product.image}" alt="${product.name}" class="product-image">
+                <div class="product-info">
+                    <h3>${product.name}</h3>
+                    <p class="product-price">R$ ${product.price.toFixed(2)}</p>
+                    <button class="add-to-cart" onclick="addToCart(${product.id})">🛍️ Adicionar ao Carrinho</button>
                 </div>
-        </div>`;
-
-    container.innerHTML += productHTML;
+            </div>`;
+        container.innerHTML += productHTML;
     });
 }
 
 function addToCart(productId) {
-    const product = products.find(p => p.id === productId);
-    cart.push(product);
-    updateCart();
-    saveToLocalStorage();
+    selectedProduct = products.find(p => p.id === productId);
+    document.getElementById('modal-product-image').src = selectedProduct.image;
+    document.getElementById('modal-product-name').textContent = selectedProduct.name;
+    document.getElementById('size-modal').style.display = 'flex';
+}
+
+function selectSize(size) {
+    if (selectedProduct) {
+        const productWithSize = { ...selectedProduct, size: size };
+        cart.push(productWithSize);
+        updateCart();
+        saveToLocalStorage();
+        closeSizeModal();
+    }
+}
+
+function closeSizeModal() {
+    document.getElementById('size-modal').style.display = 'none';
+    selectedProduct = null;
 }
 
 function removeFromCart(index) {
@@ -67,21 +74,17 @@ function updateCartModal() {
     let total = 0;
     
     cart.forEach((item, index) => {
-    total += item.price;
-    itemsContainer.innerHTML += `
-
-        <div class="cart-item">
-            
-            <span>${item.name}</span>
-            
-            <div class="item-controls">
-                <span>R$ ${item.price.toFixed(2)}</span>
-                <span class="remove-item" onclick="removeFromCart(${index})">✕</span>
-            </div>
-
-        </div>`;
+        total += item.price;
+        itemsContainer.innerHTML += `
+            <div class="cart-item">
+                <span>${item.name} ${item.size ? `(${item.size})` : ''}</span>
+                <div class="item-controls">
+                    <span>R$ ${item.price.toFixed(2)}</span>
+                    <span class="remove-item" onclick="removeFromCart(${index})">✕</span>
+                </div>
+            </div>`;
     });
-    
+
     totalElement.textContent = total.toFixed(2);
 }
 
@@ -90,19 +93,17 @@ function toggleCart() {
 }
 
 function handleCheckout() {
-    if(cart.length === 0) {
+    if (cart.length === 0) {
         alert('Seu carrinho está vazio!');
         return;
     }
-    
-    // Se o cliente confirmar ele sera redirecionado para o Whatsapp
 
-    if(confirm('Deseja finalizar a compra?')) {
+    if (confirm('Deseja finalizar a compra?')) {
         cart = [];
         updateCart();
         saveToLocalStorage();
         toggleCart();
-        window.location.href = "https://wa.me/5562981917921"
+        window.location.href = "https://wa.me/5562981917921";
     }
 }
 

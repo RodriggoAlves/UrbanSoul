@@ -5,9 +5,48 @@
     --black: #000000;
     --white: #ffffff;
 }
+/* Pop Up carrinho */
+.cart-modal {
+    display: none;
+    position: fixed;
+    right: 2%;
+    top: 80px;
+    width: 380px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: -4px 8px 24px rgba(255, 4, 4, 0.1);
+    padding: 1.5rem;
+    max-height: 75vh;
+    overflow-y: auto;
+}
 
-/*botão de finalizar ccompra*/
+.cart-modal.show {
+    display: block;
+}
 
+/*texto onde está escrito "Seu carrinho" */
+.cart-header h2 {
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+/* Distancia entre o texto "Seu carrinho" e o nome dos produtos */
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+/* preço do produto */
+.item-controls {
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/*botão de finalizar compra*/
 .checkout-btn {
     background: linear-gradient(135deg, #000000 0%, #3e3d3f 100%);
     color: white;
@@ -21,7 +60,6 @@
     transition: transform 0.2s, opacity 0.2s;
     font-family: 'Poppins',sans-serif;
 }
-
 .checkout-btn:hover {
     background: linear-gradient(135deg, #01a801 0%, #2c2b2c 100%);
     opacity: 0.9;
@@ -42,6 +80,14 @@
     transition: background 0.3s;
     color: black;
     font-family: 'Poppins',sans-serif;
+    font-weight: 500;
+}
+/* circulo ao lado do icone do carrinho */
+.cart-count {
+    background-color: var(--green);
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 

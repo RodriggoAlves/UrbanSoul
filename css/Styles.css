@@ -14,69 +14,6 @@ body {
     background-color: #000000;
 }
 
-/* Header Moderno */
-header {
-    background-color: var(--white);
-    padding: 1.2rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.cart-count {
-    background-color: var(--green);
-    padding: 4px 8px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-/* Modal do Carrinho Moderno */
-.cart-modal {
-    display: none;
-    position: fixed;
-    right: 2%;
-    top: 80px;
-    width: 380px;
-    background: white;
-    border-radius: 16px;
-    box-shadow: -4px 8px 24px rgba(0,0,0,0.1);
-    padding: 1.5rem;
-    max-height: 75vh;
-    overflow-y: auto;
-}
-
-.cart-modal.show {
-    display: block;
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
-}
-
-.cart-header h2 {
-    color: var(--black);
-    font-size: 1.5rem;
-}
-
-
-.item-controls {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-
-
-
 @media (max-width: 768px) {
 
     .products {
