@@ -50,24 +50,29 @@
     </div>
     
     <div id="payment-modal">
+    
         <div class="payment-content">
+    <!-- Botão X para fechar -->
+            <span class="close-btn" onclick="closePaymentModal()">✕</span>
 
             <h2>Selecione a forma de pagamento</h2>
 
             <ul id="payment-items"></ul>
 
             <p><strong>Total:</strong> <span id="payment-total">R$ 0,00</span></p>
-            
-            <div>
-                <button class="payment-option" id="payment-pix" onclick="selectPayment('pix')">PIX</button>
-                <button class="payment-option" id="payment-debito" onclick="selectPayment('debito')">DÉBITO</button>
-                <button class="payment-option" id="payment-credito" onclick="selectPayment('credito')">CRÉDITO</button>
-            </div>
-        
+    
+                <div class="payment-options">
+                    <button class="payment-option" id="payment-pix" onclick="selectPayment('pix')">PIX</button>
+                    <button class="payment-option" id="payment-debito" onclick="selectPayment('debito')">DÉBITO</button>
+                    <button class="payment-option" id="payment-credito" onclick="selectPayment('credito')">CRÉDITO</button>
+                </div>
+  
             <button id="confirm-payment" onclick="confirmPayment()">Confirmar Pagamento</button>
     
         </div>
+    
     </div>
+
 
     
     <div class="size-modal" id="size-modal">
