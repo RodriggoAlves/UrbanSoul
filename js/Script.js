@@ -11,10 +11,11 @@ const products = [
 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let selectedProduct = null;
+let selectedPayment = null;
 
 function initProducts() {
     const container = document.getElementById('products-container');
-    
+    container.innerHTML = ''; // limpar antes de adicionar
     products.forEach(product => {
         const productHTML = `
             <div class="product-card">
@@ -69,10 +70,9 @@ function updateCartIcon() {
 function updateCartModal() {
     const itemsContainer = document.getElementById('cart-items');
     const totalElement = document.getElementById('cart-total');
-    
     itemsContainer.innerHTML = '';
     let total = 0;
-    
+
     cart.forEach((item, index) => {
         total += item.price;
         itemsContainer.innerHTML += `
@@ -98,13 +98,73 @@ function handleCheckout() {
         return;
     }
 
-    if (confirm('Deseja finalizar a compra?')) {
-        cart = [];
-        updateCart();
-        saveToLocalStorage();
-        toggleCart();
-        window.location.href = "https://wa.me/5562981917921";
+    showPaymentModal();
+}
+
+function showPaymentModal() {
+    const modal = document.getElementById('payment-modal');
+    const itemsList = document.getElementById('payment-items');
+    const totalAmount = document.getElementById('payment-total');
+
+    itemsList.innerHTML = cart.map(item => `<li>${item.name} ${item.size ? `(${item.size})` : ''}</li>`).join('');
+    const total = cart.reduce((sum, item) => sum + item.price, 0);
+    totalAmount.textContent = `R$ ${total.toFixed(2)}`;
+
+    selectedPayment = null;
+    document.querySelectorAll('.payment-option').forEach(btn => btn.classList.remove('selected'));
+
+    modal.style.display = 'flex';
+}
+
+function selectPayment(method) {
+    selectedPayment = method;
+    document.querySelectorAll('.payment-option').forEach(btn => btn.classList.remove('selected'));
+    document.getElementById(`payment-${method}`).classList.add('selected');
+}
+
+function generateWhatsAppMessage() {
+    const now = new Date();
+    const hour = now.getHours();
+    let greeting = "Boa tarde";
+
+    if (hour >= 0 && hour < 6) {
+        greeting = "Boa madrugada";
+    } else if (hour >= 6 && hour < 12) {
+        greeting = "Bom dia";
+    } else if (hour >= 12 && hour < 18) {
+        greeting = "Boa tarde";
+    } else {
+        greeting = "Boa noite";
     }
+
+    let productsList = cart.map(item => `- ${item.name} (${item.size || "Tamanho não selecionado"})`).join('\n');
+    let total = cart.reduce((sum, item) => sum + item.price, 0);
+    let paymentText = selectedPayment ? selectedPayment.toUpperCase() : "Não selecionada";
+
+    const message = `${greeting}, vim direcionado do site e preciso finalizar o meu pedido\n\n` +
+                    `Produtos selecionados:\n${productsList}\n\n` +
+                    `Valor do pedido: R$ ${total.toFixed(2)}\n\n` +
+                    `Forma de pagamento: ${paymentText}`;
+
+    return message;
+}
+
+function confirmPayment() {
+    if (!selectedPayment) {
+        alert('Selecione uma forma de pagamento!');
+        return;
+    }
+
+    const message = generateWhatsAppMessage();
+    const encodedMessage = encodeURIComponent(message);
+
+    cart = [];
+    updateCart();
+    saveToLocalStorage();
+    document.getElementById('payment-modal').style.display = 'none';
+    toggleCart();
+
+    window.location.href = `https://wa.me/5562981917921?text=${encodedMessage}`;
 }
 
 function saveToLocalStorage() {

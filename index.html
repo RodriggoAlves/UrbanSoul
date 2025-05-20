@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/css/Cart.css">
     <link rel="stylesheet" href="/css/Cards.css">
     <link rel="stylesheet" href="/css/Footer.css">
+    <link rel="stylesheet" href="/css/Confirmpayments.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     
@@ -47,6 +48,27 @@
         <button class="checkout-btn" onclick="handleCheckout()">Finalizar Compra</button>
         
     </div>
+    
+    <div id="payment-modal">
+        <div class="payment-content">
+
+            <h2>Selecione a forma de pagamento</h2>
+
+            <ul id="payment-items"></ul>
+
+            <p><strong>Total:</strong> <span id="payment-total">R$ 0,00</span></p>
+            
+            <div>
+                <button class="payment-option" id="payment-pix" onclick="selectPayment('pix')">PIX</button>
+                <button class="payment-option" id="payment-debito" onclick="selectPayment('debito')">DÉBITO</button>
+                <button class="payment-option" id="payment-credito" onclick="selectPayment('credito')">CRÉDITO</button>
+            </div>
+        
+            <button id="confirm-payment" onclick="confirmPayment()">Confirmar Pagamento</button>
+    
+        </div>
+    </div>
+
     
     <div class="size-modal" id="size-modal">
 
@@ -98,7 +120,7 @@
         </div>
 
         <div class="footer-column">
-            <h3>Permaneca conectado</h3>
+            <h3>Permaneça conectado</h3>
         <div class="social-icons">
 
         <a href="#"><i class="fab fa-instagram"></i></a>
