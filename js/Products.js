@@ -11,5 +11,4 @@ const products = [
   { id: 10, name: 'Calça Streetwear', price: 242.90, image: '/img/Products/Calça STREETWEAR.jpg' },
   { id: 11, name: 'Calça Wats Ripstop Cargo', price: 126.63, image: '/img/Products/Calça Wats Ripstop Cargo Viés Bege.jpg' },
   { id: 12, name: 'Calças Cargo Masculina', price: 75.90, image: '/img/Products/Calças Cargo Masculina Jeans Larga Bolso Lateral.jpg' },
- 
 ];
