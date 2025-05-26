@@ -1,3 +1,5 @@
+/* 16 */
+
 const products = [
   { id: 1, name: 'Camiseta Self Angel Love Kiss StreetWear Style', price: 102.55, image: '/img/Products/Camiseta Self Angel Love.jpg' },
   { id: 2, name: 'Camiseta Streetwear - Bege', price: 159.90, image: '/img/Products/Camiseta Streetwear.jpg' },

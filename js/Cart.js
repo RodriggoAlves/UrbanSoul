@@ -1,3 +1,4 @@
+/* 13 */ 
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 let selectedProduct = null;
 let selectedPayment = null;

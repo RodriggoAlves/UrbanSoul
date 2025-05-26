@@ -1,3 +1,5 @@
+/* 14 */
+
 // Exibe o modal de seleção de pagamento e preenche itens + total
 function showPaymentModal() {
   const modal = document.getElementById('payment-modal');
