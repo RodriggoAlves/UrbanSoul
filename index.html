@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Confirmpayments.css">
     <link rel="stylesheet" href="/css/ChatBot.css">
+    <link rel="stylesheet" href="/css/PooupCadastro.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -158,6 +159,40 @@
     </div>
     </div>
 
+    <!-- Cadastro do nome do usuário -->
+
+<div id="popup-cadastro" class="popup-overlay">
+    <div class="popup-content">
+      <h2>Seja bem-vindo(a) 🖤</h2>
+
+      <label for="nome">Seu nome:</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" />
+
+      <label for="cep">Seu CEP:</label>
+      <div class="cep-container">
+        <input type="text" id="cep" placeholder="Digite seu CEP" />
+        <button id="buscar-cep">Buscar CEP</button>
+      </div>
+
+      <div id="endereco-info" style="display: none;">
+        <label for="rua">Rua:</label>
+        <input type="text" id="rua" disabled />
+
+        <label for="bairro">Bairro:</label>
+        <input type="text" id="bairro" disabled />
+
+        <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" disabled />
+
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" disabled />
+      </div>
+
+      <button id="confirmar-cadastro" style="display: none;">Confirmar Cadastro</button>
+    </div>
+  </div>
+
+
         <!-- #5 -->
         
         <script src="/js/WhatsAppMensage.js"></script>
@@ -165,6 +200,7 @@
         <script src="/js/Payment.js"></script>
         <script src="/js/Cart.js"></script>
         <script src="/js/ChatBot.js"></script>
+        <script src="/js/PopupCadastro.js"></script>
 
     </body>
     </html>
