@@ -38,9 +38,9 @@ function generateWhatsAppMessage() {
 
   const message =
     `${greeting}, me chamo ${userName}. Vim direcionado do site e preciso finalizar o meu pedido\n\n` +
-    `📦 PRODUTOS SELECIONADOS:\n${productsList}\n\n` +
-    `💵 VALOR TOTAL: R$ ${total.toFixed(2)}\n\n` +
-    `💳 FORMA DE PAGAMENTO: ${paymentText}` +
+    `PRODUTOS SELECIONADOS:\n${productsList}\n\n` +
+    `VALOR TOTAL: R$ ${total.toFixed(2)}\n\n` +
+    `FORMA DE PAGAMENTO: ${paymentText}` +
     `${addressInfo}`;
 
   return message;
