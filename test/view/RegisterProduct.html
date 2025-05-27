@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produto - UrbanSoul</title>
+  <link rel="stylesheet" href="/css/Styles.css">
+  <link rel="stylesheet" href="/css/Header.css">
+  <link rel="stylesheet" href="/css/Footer.css">
+  <link rel="stylesheet" href="/test/view/Css/RegisterProduct.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+  <header>
+    <div class="logo">UrbanSoul</div>
+  </header>
+
+  <main>
+    <div class="container-cadastro">
+      <h2>Cadastro de Produto</h2>
+      <form id="form-produto">
+        <div class="form-group">
+          <label for="nome">Nome do Produto</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+
+        <div class="form-group">
+          <label for="quantidade">Quantidade Disponível</label>
+          <input type="number" id="quantidade" name="quantidade" min="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="valor">Valor do Produto (R$)</label>
+          <input type="number" id="valor" name="valor" step="0.01" required />
+        </div>
+
+        <div class="form-group">
+          <label>Tamanhos Disponíveis</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" name="tamanhos" value="P"> P</label>
+            <label><input type="checkbox" name="tamanhos" value="M"> M</label>
+            <label><input type="checkbox" name="tamanhos" value="G"> G</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <select id="categoria" name="categoria" required>
+            <option value="">Selecione uma opção</option>
+            <option value="camiseta">CAMISETA</option>
+            <option value="calca">CALÇA</option>
+            <option value="tenis">TÊNIS</option>
+            <option value="bone">BONÉ</option>
+          </select>
+        </div>
+
+        <button type="submit" class="confirmar-btn">Confirmar Cadastro</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer-clean">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Departamentos</h3>
+        <ul>
+          <li><a href="#">Produtos</a></li>
+          <li><a href="/PrivacyPolicy.html">Política de Privacidade</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h3>Entre em contato</h3>
+        <p>📞 (62) 9 8191-7921</p>
+        <p>📧 contato@urbansoul.com</p>
+      </div>
+
+      <div class="footer-column">
+        <h3>Permaneça conectado</h3>
+        <div class="social-icons">
+          <a href="https://www.instagram.com/urbansoulmoda"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/test/view/Js/RegisterProduct.js"></script>
+
+</body>
+
+</html>

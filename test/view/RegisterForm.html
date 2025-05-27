@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vire Nosso Cliente - Urban Souls</title>
+  <link rel="stylesheet" href="/test/view/Css/RegisterForm.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <main>
+    <div class="cliente-container">
+      <h2>Vire Nosso Cliente</h2>
+      <p class="intro-text">Quer revender produtos Urban Souls ou fazer parceria com a gente? Preencha o formulário abaixo que entraremos em contato!</p>
+      
+      <form id="clienteForm">
+        <div class="form-group">
+          <label for="nomeLoja">Nome da sua loja</label>
+          <input type="text" id="nomeLoja" name="nomeLoja" placeholder="Ex: Street Style Modas" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone para contato</label>
+          <input type="text" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email comercial</label>
+          <input type="email" id="email" name="email" placeholder="exemplo@loja.com.br" required />
+        </div>
+
+        <div class="form-group">
+          <label for="informacoes">Fale sobre seu negócio</label>
+          <textarea id="informacoes" name="informacoes" rows="5" placeholder="Conte pra gente sobre sua loja, estilo, localização, público..." required></textarea>
+        </div>
+
+        <button type="submit" class="enviar-btn">Enviar</button>
+      </form>
+    </div>
+  </main>
+</body>
+</html>

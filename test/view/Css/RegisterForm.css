@@ -1,0 +1,74 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 80px;
+}
+
+.cliente-container {
+    max-width: 700px;
+    margin: 60px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
+}
+
+.cliente-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    resize: vertical;
+    background-color: #fff;
+}
+
+.enviar-btn {
+    background: linear-gradient(90deg, #000000, #222222);
+    color: white;
+    padding: 14px;
+    border: none;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.enviar-btn:hover {
+    background: linear-gradient(90deg, #111111, #333333);
+}
