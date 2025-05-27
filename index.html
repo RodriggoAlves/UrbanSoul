@@ -2,6 +2,7 @@
 <html lang="pt-br">
 
 <head>
+
     <!-- #1 -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="/css/Cards.css">
     <link rel="stylesheet" href="/css/Footer.css">
     <link rel="stylesheet" href="/css/Confirmpayments.css">
+    <link rel="stylesheet" href="/css/ChatBot.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -136,12 +138,33 @@
 
     </footer>
 
+    <!-- Chatbot Flutuante -->
+    <div id="chatbot-button" title="Falar com atendente">
+    <i class="fas fa-comments"></i>
+    </div>
+
+    <div id="chatbot-box">
+    <div class="chat-header">
+        <span>Atendente Virtual 👕</span>
+        <button id="close-chatbot">✕</button>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <p>Olá! Como posso ajudar?</p>
+        <div class="options">
+        <button onclick="responder('Novidades')">🆕 Novidades</button>
+        <button onclick="responder('Status do pedido')">📦 Status do pedido</button>
+        <button onclick="responder('Contato humano')">🙋 Contato humano</button>
+        </div>
+    </div>
+    </div>
+
         <!-- #5 -->
         
         <script src="/js/WhatsAppMensage.js"></script>
         <script src="/js/Products.js"></script>
         <script src="/js/Payment.js"></script>
         <script src="/js/Cart.js"></script>
+        <script src="/js/ChatBot.js"></script>
 
     </body>
     </html>
