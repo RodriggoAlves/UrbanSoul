@@ -32,24 +32,26 @@ window.addEventListener("load", () => {
   buscarCepBtn.addEventListener("click", async () => {
     const cep = cepInput.value.replace(/\D/g, "");
 
-    if (!cep) return alert("Digite um CEP válido");
+    if (!cep || cep.length !== 8) return alert("Digite um CEP válido com 8 dígitos");
 
     try {
-      const resposta = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
+      const resposta = await fetch(`https://brasilapi.com.br/api/cep/v1/${cep}`);
+      if (!resposta.ok) throw new Error("Erro na resposta da API");
+
       const dados = await resposta.json();
 
-      if (dados.erro) return alert("CEP não encontrado!");
+      if (!dados.cep) return alert("CEP não encontrado!");
 
       enderecoInfo.style.display = "block";
-      ruaInput.value = dados.logradouro || "";
-      bairroInput.value = dados.bairro || "";
-      cidadeInput.value = dados.localidade || "";
-      estadoInput.value = dados.uf || "";
+      ruaInput.value = dados.street || "";
+      bairroInput.value = dados.neighborhood || "";
+      cidadeInput.value = dados.city || "";
+      estadoInput.value = dados.state || "";
 
       confirmarBtn.style.display = "block";
     } catch (err) {
-      console.error(err);
-      alert("Erro ao buscar o CEP");
+      console.error("Erro ao buscar CEP:", err);
+      alert("Erro ao buscar o CEP. Tente novamente.");
     }
   });
 
